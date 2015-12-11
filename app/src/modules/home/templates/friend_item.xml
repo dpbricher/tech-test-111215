@@ -1,0 +1,4 @@
+<span>User Name:</span><span><%= username %></span>
+<span>Full Name:</span><span><%= fullname %></span>
+<span>email:</span><span><%= email %></span>
+<button id="remove">Remove Friend</button>

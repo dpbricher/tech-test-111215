@@ -1,0 +1,23 @@
+[
+	{
+		"username":"dricher",
+		"password":"iamdean",
+		"email":"dpbricher@gmail.com",
+		"friends":[],
+		"fullname":"Dean Richer"
+	},
+	{
+		"username":"bbateman",
+		"password":"isogangsta",
+		"email":"bbateman@gmail.com",
+		"friends":[],
+		"fullname":"Billy Bateman"
+	},
+	{
+		"username":"iman",
+		"password":"imarealboy",
+		"email":"iman@aol.com",
+		"friends":[],
+		"fullname":"Imaginary Man"
+	}
+]

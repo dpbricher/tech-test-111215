@@ -1,0 +1,11 @@
+<div id="input-holder">
+    <span>User Name:</span><input id="user-input" type="text" placeholder="<%= username %>" />
+    <span>Full Name:</span><input id="full-input" type="text" placeholder="<%= fullname %>" />
+    <span>email:</span><input id="email-input" type="text" placeholder="<%= email %>" />
+    <span>Password:</span><input id="pass-input" type="password" />
+    <span>Confirm Password:</span><input id="confirm-input" type="password" />
+</div>
+<div id="button-holder">
+    <button id="confirm-button">Update</button>
+    <button id="cancel-button">Cancel</button>
+</div>

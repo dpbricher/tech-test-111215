@@ -1,0 +1,14 @@
+{
+  "name": "test-exercise",
+  "version": "1.0.0",
+  "description": "- Node.js and npm - MongoDB",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dpbricher@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

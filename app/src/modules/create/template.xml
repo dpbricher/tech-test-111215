@@ -1,0 +1,11 @@
+<div id="input-holder">
+    <span>User Name:</span><input id="user-input" type="text" />
+    <span>Full Name:</span><input id="full-input" type="text" />
+    <span>email:</span><input id="email-input" type="text" />
+    <span>Password:</span><input id="pass-input" type="password" />
+    <span>Confirm Password:</span><input id="confirm-input" type="password" />
+</div>
+<div id="button-holder">
+    <button id="confirm-button">Submit</button>
+    <button id="cancel-button">Cancel</button>
+</div>

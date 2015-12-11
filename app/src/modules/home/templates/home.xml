@@ -1,0 +1,8 @@
+<button id="update-details">Update My Details</button>
+<hr/>
+<div>All Users:</div>
+<span>Search:</span><input id="search-input" type="text" />
+<div id="results"></div>
+<hr/>
+<div>Friends</div>
+<div id="friends-list"></div>
