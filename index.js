@@ -5,20 +5,14 @@ var express         = require("express");
 var session         = require("express-session");
 // express middleware includes
 var bodyParser      = require("body-parser");
-// # multer          = require "multer"
-
-// # gridFsStream    = require "gridfs-stream"
 
 
 var DATABASE_URL    = "localhost:27017/dbUsers";
-
-// MAX_RAW_UPLOAD  = "1gb"
 
 var app             = express();
 
 var daemonHandle    = null;
 var dbHandle        = null;
-// var gfs             = null
 
 function start(){
     // catch ctrl+c so that open connections can be closed gracefully
@@ -31,7 +25,6 @@ function start(){
             console.log("connected");
 
             dbHandle    = db;
-            // gfs         = gridFsStream dbHandle, mdb
 
             startApp();
         }, function(err){
@@ -83,12 +76,6 @@ function connect(successCall, errorCall){
     );
 };
 
-// findFiles       = (params, call)->
-//     dbHandle
-//     .collection "fs.files"
-//     .find params
-//     .toArray call
-
 function allowCrossDomain(req, res, next){
     res.header('Access-Control-Allow-Origin', 'http://localhost:8000');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -127,7 +114,6 @@ function sessionIsValid(req){
 }
 
 function startApp(){
-    // app.use bodyParser.raw limit:MAX_RAW_UPLOAD
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended:true }));
     app.use(session({
@@ -137,7 +123,6 @@ function startApp(){
         },
         httpOnly:false
     }));
-    // app.use multer()
     app.use(allowCrossDomain);
 
     app.listen(1337);
@@ -225,47 +210,6 @@ function startApp(){
             res.send("not logged in");
         }
     });
-
-    // # returns a json for collection "name" filtered by id "id"
-    // app.get "/:name/:id", (req, res)->
-    //     tryGetId req.params.id,
-    //         (testId)->
-    //             dbHandle
-    //             .collection req.params.name
-    //             .find(
-    //                 _id:testId
-    //             )
-    //             .toArray (err, results) ->
-    //                 res.send err || results[0]
-    //         , getIdErrorCall res
-
-    // # inserts the posted json content into the collection "name"
-    // app.post "/:name", (req, res)->
-    //     dbHandle
-    //     .collection req.params.name
-    //     .insertOne req.body, (err, results) ->
-    //         if err?
-    //             res.send err
-    //         else
-    //             # add _id of created document to our response
-    //             results.result._id  = results.insertedId
-    //             res.send results.result
-
-    // # updates the record with _id "id" in collection "name" with the values in
-    // # the request
-    // app.put "/:name/:id", (req, res)->
-    //      delete req.body._id
-    //      tryGetId req.params.id,
-    //          (testId)->
-    //              dbHandle
-    //              .collection req.params.name
-    //              .updateOne { _id:testId }, { $set:req.body },
-    //                  (err, results) ->
-    //                     dbHandle.collection req.params.name
-    //                             .find(_id:testId)
-    //                             .toArray (err, results) ->
-    //                                 res.send err || results[0]
-    //          , getIdErrorCall res
 }
 
 start();
