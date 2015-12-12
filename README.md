@@ -16,7 +16,7 @@ From a terminal:
 directory
 - run `gulp` inside the "app" directory
 - ensure mongod is running (execute `mongod` from within another terminal if it is not)
-- create a database named "dbUsers" within your local mongo data store (you can execute `./create_db.sh` from the root directory)
+- create a database named "dbUsers" within your local mongo data store and give it a collection named "users" (you can execute `./create_db.sh` from the root directory)
 - execute `node index.js` from the root directory to start the server
 - navigate to "http://localhost:1337/dist" from with a web browser
 
